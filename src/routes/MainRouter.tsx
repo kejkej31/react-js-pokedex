@@ -6,7 +6,7 @@ import NotFoundPage from "components/ErrorPages/NotFoundPage";
 
 const MainRouter = () => {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Suspense fallback={<Loader />}>
         <Routes>
           {routes.map((route: any, i: number) => (
