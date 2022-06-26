@@ -19,7 +19,7 @@ interface PokemonGridProps {
 
 const storageGridKey = "grid_pokemons";
 
-export const PokemonGrid = ({ initPage = 1, limit = 20, debounce = 300 }: PokemonGridProps) => {
+export const PokemonGrid = ({ initPage = 1, limit = 20, debounce = undefined }: PokemonGridProps) => {
   const metaTags = useContext(MetaTagsContext);
   const [page, setPage] = useState(initPage - 1);
   const [pokemons, setPokemons] = useState<GenericPokemon[]>(
@@ -40,10 +40,10 @@ export const PokemonGrid = ({ initPage = 1, limit = 20, debounce = 300 }: Pokemo
   });
 
   useEffect(() => {
-    if (loadMoreIsVisible) {
+    if (loadMoreIsVisible && !loading) {
       setPage(pokemons.length === 0 ? 0 : pokemons.length / limit);
     }
-  }, [loadMoreIsVisible, limit, pokemons.length]);
+  }, [loading, loadMoreIsVisible, limit, pokemons.length]);
 
   useMemo(() => {
     if (result?.results) {

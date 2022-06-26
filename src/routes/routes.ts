@@ -1,5 +1,5 @@
-import PokemonGrid from "components/PokemonGrid/PokemonGrid";
-import { PokemonRoute } from "./PokemonRoute";
+import { HomePage } from "./HomePage";
+import { PokemonCardPage } from "./PokemonCardPage";
 
 export enum RoutesEnum {
   Home = "/",
@@ -9,11 +9,11 @@ export enum RoutesEnum {
 export const routes = [
   {
     path: RoutesEnum.Home,
-    element: PokemonGrid,
+    element: HomePage,
   },
   {
     path: RoutesEnum.Pokemon,
-    element: PokemonRoute,
+    element: PokemonCardPage,
   },
 ];
 
