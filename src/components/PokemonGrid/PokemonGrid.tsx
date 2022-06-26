@@ -40,7 +40,6 @@ export const PokemonGrid = ({ initPage = 1, limit = 20, debounce = 300 }: Pokemo
   });
 
   useEffect(() => {
-    console.log(loadMoreIsVisible);
     if (loadMoreIsVisible) {
       setPage(pokemons.length === 0 ? 0 : pokemons.length / limit);
     }
