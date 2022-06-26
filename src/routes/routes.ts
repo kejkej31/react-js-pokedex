@@ -1,5 +1,5 @@
-import { HomePage } from "./HomePage";
-import { PokemonCardPage } from "./PokemonCardPage";
+import { HomePage } from "./pages/HomePage";
+import { PokemonCardPage } from "./pages/PokemonCardPage";
 
 export enum RoutesEnum {
   Home = "/",
@@ -16,7 +16,3 @@ export const routes = [
     element: PokemonCardPage,
   },
 ];
-
-export function findRoute(path: RoutesEnum) {
-  return routes.find((route) => route.path === path);
-}
