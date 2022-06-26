@@ -8,8 +8,9 @@ export const getPokemons = async (offset: number, limit: number = 20): Promise<P
   const result = await fetch(`https://pokeapi.co/api/v2/pokemon/?limit=${limit}&offset=${offset}`)
     .then((response) => response.json())
     .then((resp) => {
-      resp.results.forEach((element: GenericPokemon) => {
-        element["id"] = parseInt(element.url.replace("https://pokeapi.co/api/v2/pokemon/", ""));
+      resp.results.forEach((pokemon: GenericPokemon) => {
+        pokemon["name"] = firstToUpper(pokemon.name);
+        pokemon["id"] = parseInt(pokemon.url.replace("https://pokeapi.co/api/v2/pokemon/", ""));
       });
       return resp;
     });
