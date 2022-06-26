@@ -1,7 +1,6 @@
 import { LazyLoadedComponent } from "components/Common/LazyLoadedComponent";
-import Loader from "components/Common/Loader";
 import useIntersectionObserver from "hooks/useIntersectionObserver";
-import { createRef, useMemo, useRef } from "react";
+import { useMemo, useRef } from "react";
 import { Link } from "react-router-dom";
 import { RoutesEnum } from "routes/routes";
 
